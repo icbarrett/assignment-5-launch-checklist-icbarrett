@@ -2,16 +2,6 @@
 console.log("hello");
 window.addEventListener("load", function() {
     console.log("in window listener");
-    // document.addEventListener("submit", function(Event) {
-    //     console.log("in document listener");
-    //     Event.preventDefault();
-        // let pilotInput = document.querySelector("input[name = pilotName]");
-        // let coPilotInput = document.querySelector("input[name = copilotName]");
-        // let fuelLevelInput = document.querySelector("input[name = fuelLevel]");
-        // let cargoMassInput = document.querySelector("input[name = cargoMass]");
-        // // let listInput = [pilotInput.value, coPilotInput.value, fuelLevelInput.value, cargoMassInput.value];
-        // formSubmission (document, pilotInput.value, coPilotInput.value, fuelLevelInput.value, cargoMassInput.value);
-    // });
 
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
