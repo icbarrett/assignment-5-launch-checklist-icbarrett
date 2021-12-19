@@ -39,6 +39,7 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
     }
     
      //  test for correct data type 
+    
     if (validateInput(pilot) != "Not a Number" ) {
         console.log("Not a string")
         alert("Make sure to enter valid information for each field!");
@@ -58,26 +59,37 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
     if (validateInput(cargoLevel) != "Is a Number") {
         window.alert("Make sure to enter valid information for each field!");
         return;
-    }   
+    } 
+    
+    // Assigning variables to document
 
-// Test for Fuel and Cargo
     if (fuelLevel > 10000 && cargoLevel < 10000 ) {
-        document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
-        document.getElementById("launchStatus").style.color = "green"
-        document.getElementById("faultyItems").style.visibility = "hidden";
+        document.getElementById("launchStatus").innerHTML = "Shuttle ready for launch";
+        document.getElementById("launchStatus").style.color = "green";
+        document.getElementById("faultyItems").style.visibility = "visible";
+        document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} ready`;
+        document.getElementById("copilotStatus").innerHTML = `Co-Pilot ${copilot} ready`;
+        document.getElementById("fuelStatus").innerHTML = `Fuel Level: ${fuelLevel} level high enough for launch for launch`
+        document.getElementById("cargoStatus").innerHTML = `Cargo Mass: ${cargoLevel} mass low enough for launch`
         return;
+
+// Test for Fuel and Cargo  
+
     } else {
+    
         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
         document.getElementById("launchStatus").style.color = "red"
-        document.getElementById("faultyItems").style.visibility = "visible"
+        document.getElementById("faultyItems").style.visibility = "visible";
         if (fuelLevel < 10000) {
-            document.getElementById("fuelStatus").innerHTML = "Fuel too low for launch"
+            document.getElementById("fuelStatus").innerHTML = `Fuel Level:${fuelLevel} too low for launch`
         };
         if (cargoLevel > 10000) {
-            document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch"
+            document.getElementById("cargoStatus").innerHTML = `Cargo Mass:${cargoLevel} too heavy for launch`
         }
         return;  
-    }    
+
+    }   
+    
 
 }
 
